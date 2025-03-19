@@ -1,5 +1,5 @@
 # Car_price_prediction
-# 🚀 Car Price Prediction - ML Model Deployment 🚀  
+# 🚀 Deployed an ML Regression Model for Car Price Prediction! 🚀  
 
 ## Project Overview  
 Excited to share my latest project where I built and deployed a **machine learning regression model** to predict car prices! 🔥  
