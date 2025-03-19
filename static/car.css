@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-image: url('/static/images.jpg'); /* Add the path to your image */
+    background-size: cover;  /* Ensures the background covers the entire page */
+    background-position: center;  /* Centers the background image */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    background-color: #f4f4f4;
+    font-size: 12px; /* Set a smaller font size for the entire body */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px; /* Reduce the bottom margin */
+    font-size: 18px; /* Make the heading smaller */
+}
+
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container label {
+    font-size: 12px; /* Smaller font size for labels */
+    margin: 8px 0 5px;
+    display: block;
+}
+
+.form-container select, .form-container input, .form-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0; /* Reduce the space between elements */
+    font-size: 12px; /* Set smaller font size for select, input, and button */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.form-container button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12px; /* Smaller font size for button */
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+.form-container button:active {
+    background-color: #3e8e41;
+}
+
+.form-container select:focus, .form-container input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.form-container .form-group {
+    margin-bottom: 20px;
+}
+
+.form-container .form-group label {
+    font-weight: bold;
+}
+
+.form-container input, .form-container select {
+    font-size: 12px; /* Smaller font size for inputs and selects */
+}
+
+.result p{
+    text-align: center;
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-container label {
+        font-size: 11px; /* Further reduce font size for smaller screens */
+    }
+
+    .form-container select, .form-container input, .form-container button {
+        padding: 8px;
+        font-size: 11px; /* Smaller font size for mobile screens */
+    }
+}
