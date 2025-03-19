@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='car.css') }}">
+</head>
+<body>
+    <h2>Car Price Prediction</h2>
+    <div class="form-container">
+        <form id="predictionForm" method="POST" >
+            <!-- Manufacturer Dropdown -->
+            <label for="manufacturer">Manufacturer</label>
+            <select id="manufacturer" name="manufacturer">
+                <option value="0">AUDI</option>
+                <option value="1">BMW</option>
+                <option value="2">CHEVROLET</option>
+                <option value="3">FORD</option>
+                <option value="4">HONDA</option>
+                <option value="5">HYUNDAI</option>
+                <option value="6">JEEP</option>
+                <option value="7">KIA</option>
+                <option value="8">LEXUS</option>
+                <option value="9">MAZDA</option>
+                <option value="10">MERCEDES-BENZ</option>
+                <option value="11">MITSUBISHI</option>
+                <option value="12">NISSAN</option>
+                <option value="13">OPEL</option>
+                <option value="14">Other</option>
+                <option value="15">SSANGYONG</option>
+                <option value="16">SUBARU</option>
+                <option value="17">TOYOTA</option>
+                <option value="18">VOLKSWAGEN</option>
+            </select>
+
+            <!-- Model Dropdown -->
+            <label for="model">Model</label>
+            <select id="model" name="model">
+                <option value="0">Aqua</option>
+                <option value="1">Camry</option>
+                <option value="2">Cruze</option>
+                <option value="3">E 350</option>
+                <option value="4">Elantra</option>
+                <option value="5">FIT</option>
+                <option value="6">Fusion</option>
+                <option value="7">GX 460</option>
+                <option value="8">H1</option>
+                <option value="9">Highlander</option>
+                <option value="10">Jetta</option>
+                <option value="11">Optima</option>
+                <option value="12">Other</option>
+                <option value="13">Prius</option>
+                <option value="14">Santa FE</option>
+                <option value="15">Sonata</option>
+                <option value="16">Transit</option>
+                <option value="17">Tucson</option>
+                <option value="18">X5</option>
+            </select>
+
+            <!-- Prod. Year Dropdown -->
+            <label for="prod_year">Production Year</label>
+            <select id="prod_year" name="prod_year">
+                <option value="0">1988</option>
+                <option value="1">1990</option>
+                <option value="2">1991</option>
+                <option value="3">1992</option>
+                <option value="4">1993</option>
+                <option value="5">1994</option>
+                <option value="6">1995</option>
+                <option value="7">1996</option>
+                <option value="8">1997</option>
+                <option value="9">1998</option>
+                <option value="10">1999</option>
+                <option value="11">2000</option>
+                <option value="12">2001</option>
+                <option value="13">2002</option>
+                <option value="14">2003</option>
+                <option value="15">2004</option>
+                <option value="16">2005</option>
+                <option value="17">2006</option>
+                <option value="18">2020</option>
+                <option value="32">Other</option>
+            </select>
+
+            <!-- Category Dropdown -->
+            <label for="category">Category</label>
+            <select id="category" name="category">
+                <option value="0">Cabriolet</option>
+                <option value="1">Coupe</option>
+                <option value="2">Goods wagon</option>
+                <option value="3">Hatchback</option>
+                <option value="4">Jeep</option>
+                <option value="5">Limousine</option>
+                <option value="6">Microbus</option>
+                <option value="7">Minivan</option>
+                <option value="8">Pickup</option>
+                <option value="9">Sedan</option>
+                <option value="10">Universal</option>
+            </select>
+
+            <!-- Leather Interior Dropdown -->
+            <label for="leather_interior">Leather Interior</label>
+            <select id="leather_interior" name="leather_interior">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <!-- Fuel Type Dropdown -->
+            <label for="fuel_type">Fuel Type</label>
+            <select id="fuel_type" name="fuel_type">
+                <option value="0">CNG</option>
+                <option value="1">Diesel</option>
+                <option value="2">Hybrid</option>
+                <option value="3">Hydrogen</option>
+                <option value="4">LPG</option>
+                <option value="5">Petrol</option>
+                <option value="6">Plug-in Hybrid</option>
+            </select>
+
+            <!-- Engine Volume Dropdown -->
+            <label for="engine_volume">Engine Volume</label>
+            <select id="engine_volume" name="engine_volume">
+                <option value="0">1</option>
+                <option value="1">1.2</option>
+                <option value="2">1.3</option>
+                <option value="3">1.4</option>
+                <option value="4">1.4 Turbo</option>
+                <option value="5">1.5</option>
+                <option value="6">1.6</option>
+                <option value="7">1.6 Turbo</option>
+                <option value="8">1.7</option>
+                <option value="9">1.8</option>
+                <option value="10">1.8 Turbo</option>
+                <option value="11">2</option>
+                <option value="12">2.0 Turbo</option>
+                <option value="13">2.2</option>
+                <option value="27">Other</option>
+            </select>
+
+            <!-- Mileage Input -->
+            <label for="mileage">Mileage (in km)</label>
+            <input type="number" id="mileage" name="mileage" required>
+
+            <!-- Cylinders Dropdown -->
+            <label for="cylinders">Cylinders</label>
+            <select id="cylinders" name="cylinders">
+                <option value="0">1.0</option>
+                <option value="1">10.0</option>
+                <option value="2">12.0</option>
+                <option value="3">14.0</option>
+                <option value="4">16.0</option>
+                <option value="5">2.0</option>
+                <option value="6">3.0</option>
+                <option value="7">4.0</option>
+                <option value="8">5.0</option>
+                <option value="9">6.0</option>
+                <option value="10">7.0</option>
+                <option value="11">8.0</option>
+            </select>
+
+            <!-- Airbags Input -->
+            <label for="airbags">Number of Airbags</label>
+            <input type="number" id="airbags" name="airbags" required>
+
+            <!-- Gearbox Type Dropdown -->
+            <label for="gear_box_type">Gearbox Type</label>
+            <select id="gear_box_type" name="gear_box_type">
+                <option value="0">Automatic</option>
+                <option value="1">Manual</option>
+                <option value="2">Tiptronic</option>
+                <option value="3">Variator</option>
+            </select>
+
+            <!-- Drive Wheels Dropdown -->
+            <label for="drive_wheels">Drive Wheels</label>
+            <select id="drive_wheels" name="drive_wheels">
+                <option value="0">4x4</option>
+                <option value="1">Front</option>
+                <option value="2">Rear</option>
+            </select>
+
+            <!-- Doors Dropdown -->
+            <label for="doors">Doors</label>
+            <select id="doors" name="doors">
+                <option value="0">02</option>
+                <option value="1">04</option>
+                <option value="2">>5</option>
+            </select>
+
+            <!-- Wheel Dropdown -->
+            <label for="wheel">Wheel</label>
+            <select id="wheel" name="wheel">
+                <option value="0">Left wheel</option>
+                <option value="1">Right-hand drive</option>
+            </select>
+
+            <!-- Color Dropdown -->
+            <label for="color">Color</label>
+            <select id="color" name="color">
+                <option value="0">Beige</option>
+                <option value="1">Black</option>
+                <option value="2">Blue</option>
+                <option value="3">Brown</option>
+                <option value="4">Carnelian red</option>
+                <option value="5">Golden</option>
+                <option value="6">Green</option>
+                <option value="7">Grey</option>
+                <option value="8">Orange</option>
+                <option value="9">Pink</option>
+                <option value="10">Purple</option>
+                <option value="11">Red</option>
+                <option value="12">Silver</option>
+                <option value="13">Sky blue</option>
+                <option value="14">White</option>
+                <option value="15">Yellow</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Predict Car Price</button>
+        </form>
+        <div class="result">
+            {% if pred_value != 0 %}
+            <p>
+                Estimated Price : ${{pred_value}}
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
